@@ -48,7 +48,11 @@
           class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
-
+    <!-- 配置通用Mapper集成Spring4 -->
+    <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!-- 设置数据访问接口类 -->
+        <property name="basePackage" value="com.pinyougou.mapper"/>
+    </bean>
     <!-- 配置开启事务注解驱动 -->
     <tx:annotation-driven />
 
